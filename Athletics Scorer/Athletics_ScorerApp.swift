@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAnalytics
 
 @main
 struct Athletics_ScorerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EventsView()
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        return true
     }
 }
